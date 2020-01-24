@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/evaluation', 'HomeController@getEvaluation')->name('evaluation');
+Route::get('/submit-evaluation', 'HomeController@getEvaluationForm')->name('submit-evaluation');
+Route::post('/submit-evaluation', 'HomeController@saveEvaluationForm')->name('submit-evaluation');
+Route::get('/search-evaluation', 'HomeController@searchEvaluationForm')->name('search-evaluation');
