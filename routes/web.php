@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return redirect('evaluation');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/evaluation', 'HomeController@getEvaluation')->name('evaluation');
 Route::get('/submit-evaluation', 'HomeController@getEvaluationForm')->name('submit-evaluation');
 Route::post('/submit-evaluation', 'HomeController@saveEvaluationForm')->name('submit-evaluation');
